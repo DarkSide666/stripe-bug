@@ -27,11 +27,12 @@ To force next payment without waiting for next subscription period you have to c
 - update it `$sub->billing_cycle_anchor='now';` `$sub->prorate=false;` `$sub->save();`
 - see in Stripe dashboard that next invoice was created, but payment is not successfull because it _requires user interaction_.
 
-It shouldn't require it because first payment was successfull and card shouldn't require authorization on each transaction.
+It **shouldn't require that** because first payment was successfull and card shouldn't require authorization on each transaction.
+This looks like a bug for me.
 
 **But API allows to pay this invoice without 3DS**
 
-But we still can pay this same invoice by using API methods without any _uset interaction_.
+But we still can pay this same invoice by using API methods without any _user interaction_.
 
 - in commandline run `php console.php`
 - now in console load Subscription: `$sub = \Stripe\Subscription::retrieve('*subscription_id_here*');`
