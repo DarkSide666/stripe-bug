@@ -1,0 +1,17 @@
+{
+    "type":"project",
+    "require":{
+        "php": "~7.2",
+        "atk4/core": "dev-legacy/v1",
+        "atk4/dsql": "dev-legacy/v1",
+        "atk4/data": "dev-legacy/v1",
+        "atk4/ui": "dev-legacy/v1",
+        "stripe/stripe-php": "*",
+        "psy/psysh": "^0.7.2"
+    },
+    "autoload":{
+        "psr-4": {
+            "atk4\\stripe\\": "src/"
+        }
+    }
+}
